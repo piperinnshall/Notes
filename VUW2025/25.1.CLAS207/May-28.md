@@ -23,7 +23,7 @@ Alaric sacks rome in 410 CE.
 
 This causes Augustine to write *City of God*.
 
-Augustine siezed Rome in a matter of hours.
+Alaric siezed Rome in a matter of hours.
 
 ## Foundation of Constantinople
 
