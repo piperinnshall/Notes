@@ -31,7 +31,7 @@ Build up the path
 
 Total length not immediate edge length
 
-```
+```sudo
 Initialize Data Structures:
     Create a distances map: set all nodes to inf, except the start node (set to 0).
     Create a backpointers map: set all nodes to None.
@@ -49,6 +49,7 @@ End:
     When the fringe is empty, distances holds the shortest distances.
     Use backpointers to reconstruct shortest paths by walking backward from any target node to the start.
 ```
+
 
 If you want all the shortest paths dijkstra is fastest
 
