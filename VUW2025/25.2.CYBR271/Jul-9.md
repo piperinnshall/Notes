@@ -168,3 +168,26 @@ Hackers frequently use malicious inputs to break security.
   non-validated inputs in code constructs.
 - In addition, if you allow inputs that are incorrect for any reason into
   your system, you risk its integrity.
+
+### Secure Data at Rest
+
+***Data at rest must be protected to meet security requirements.***
+
+If someone gains physical or logical access to storage, they can extract that data.
+
+Doctors have access to patient records, but no way to extract these records.
+
+This is a very difficult problem.
+
+### Avoid Bypass Attacks
+
+***Attacks that bypass authentication or authorization gates are among the most dangerous.
+
+Consider “Forgot my password” as a way to bypass authentication.
+
+The login/password/forgotten-password system must be designed carefully.
+- Prevent information leakage.
+- Strong configurable passwords.
+- Strong encryption.
+- No bypass opportunities.
+
