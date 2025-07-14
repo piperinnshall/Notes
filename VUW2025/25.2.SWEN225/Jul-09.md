@@ -30,7 +30,6 @@ interface Greeter {
 
 - Trying to get the work done is a bad idea. 
     - It produces long and verbose code.
-
 - Fail as soon as possible.
 
 # Code Normalization
