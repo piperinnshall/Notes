@@ -80,19 +80,6 @@ signal getting corrupted. Water can affect the signal.
 
 ## Medium Access Control
 
-- channel partitioning.
-    - divide channel into smaller “pieces” (time slots,
-      frequency, code).
-    - allocate piece to node for exclusive use.
-- random access.
-    - channel not divided, allow collisions.
-    - “recover” from collisions.
-- “taking turns”.
-    - nodes take turns, but nodes with more to send can take.
-      Longer turns.
-
-### Channel partitioning MAC protocols (1)
-
 Shared broadcast channel.
 
 - Problem:
@@ -106,6 +93,18 @@ Try to find the little pause between people talking.
 
 If 2 or more devices transmit at the same time, you might get interference.
 
+- channel partitioning.
+    - divide channel into smaller “pieces” (time slots,
+      frequency, code).
+    - allocate piece to node for exclusive use.
+- random access.
+    - channel not divided, allow collisions.
+    - “recover” from collisions.
+- “taking turns”.
+    - nodes take turns, but nodes with more to send can take.
+      Longer turns.
+    - If the transmission fails, there must be another way to transmit again.
+
 ### Multiple Access Protocol
 
 - Distributed algorithm that determines how nodes share channel, i.e.,
@@ -113,3 +112,55 @@ If 2 or more devices transmit at the same time, you might get interference.
 - Communication about channel sharing must use channel itself!
 - No out-of-band channel for coordination.
 
+### Channel partitioning MAC protocols (1)
+
+TDMA: time division multiple access.
+- access to channel in "rounds".
+- each station gets fixed length slot (length = packet transmission time)
+  in each round.
+- unused slots go idle.
+- example: 6-station LAN, 1,3,4 have packets to send, slots 2,5,6 idle.
+
+The base station must allocate a time slot to each device to communicate.
+
+### Channel partitioning MAC protocols (2)
+
+How fast you transmit the signal.
+
+FDMA: frequency division multiple access.
+- channel spectrum divided into frequency bands.
+- each station assigned fixed frequency band.
+- unused transmission time in frequency bands go idle.
+- example: 6-station LAN, 1,3,4 have packet to send, frequency bands 2,5,6
+  idle.
+
+## ALOHA Network
+
+The first.
+
+- Developed by Norman Abramson at the University of Hawaii.
+- mountainous islands -> land-based network difficult to install.
+- fully decentralized protocol.
+- Nodes transmit frames whenever they have data; when Base Station
+  receives a frame, it sends back an **ACK**nowledgement.
+- No ACK -> failure.
+- Negative ACK -> failure.
+- Wait random time period, then transmit again.
+
+### Carrier Sense Multiple Access
+
+- CSMA improves on ALOHA by sensing the channel!
+    - Node doesn’t send if it senses another node sending (detects
+      signal).
+- What to do if the channel is busy?
+    - 1-persistent (greedy) sends as soon as idle.
+    - Non-persistent waits a random time then tries again.
+      – p-persistent sends with probability p when idle.
+
+#### CSMA with Collision Detection
+
+CSMA/CD improvement is to detect/abort collisions
+- Stop sending immediately once collision is detected.
+- back off for random time period before attempting to retransmit.
+
+## Ethernet (IEEE802.3)
