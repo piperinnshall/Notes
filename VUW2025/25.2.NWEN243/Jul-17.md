@@ -147,7 +147,17 @@ The first.
 - Negative ACK -> failure.
 - Wait random time period, then transmit again.
 
+If any bits in a frame get corrupted, the whole frame is gone.
+
+Only when a frame has been successfully sent, there will be an acknowledgment.
+
 ### Carrier Sense Multiple Access
+
+To improve slightly, rather than just send whenever you want, listen first
+before you send. If no one else is transmitting, I send. If someone is
+transmitting, wait until the moment they stop.
+
+Aloha is just send.
 
 - CSMA improves on ALOHA by sensing the channel!
     - Node doesn’t send if it senses another node sending (detects
@@ -161,6 +171,6 @@ The first.
 
 CSMA/CD improvement is to detect/abort collisions
 - Stop sending immediately once collision is detected.
-- back off for random time period before attempting to retransmit.
+- back off for random time period before attempting to re transmit.
 
 ## Ethernet (IEEE802.3)
